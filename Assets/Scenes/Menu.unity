@@ -665,6 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 561755395}
+  - component: {fileID: 561755396}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -687,6 +688,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &561755396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561755394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88f5678cfe66804095738abf7846b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  onSceneStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  fade: {fileID: 1634265268259463765}
+  fadeOutAnimationName: FadeOut
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1193,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451780614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 561755396}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: GoToSceneWithFade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Game
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1451780614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,6 +1626,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 024068483e7bad249adf4da136c04419, type: 3}
+--- !u!95 &1634265268259463765 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4335300632581199170, guid: 024068483e7bad249adf4da136c04419, type: 3}
+  m_PrefabInstance: {fileID: 1634265268259463764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
