@@ -11,24 +11,33 @@ public class Pool : MonoBehaviour
     public GameObject Prefab { set { prefab = value; } }
     private GameObject currentObject;
     public GameObject CurrentObject => currentObject;
-    public void InstantiateObject(Vector3 position)
+    public void InstantiateObject(Vector3 position, bool isTurnedOff = false)
     {
         if (poolStack.Count > 0)
         {
             currentObject = poolStack.Pop();
-            currentObject.transform.position = position;
-            currentObject.SetActive(true);
+            if (!isTurnedOff)
+            {
+                currentObject.SetActive(true);
+            }
         }
         else
         {
             currentObject = Instantiate(prefab);
+            if (isTurnedOff)
+            {
+                currentObject.SetActive(false);
+            }
             currentObject.AddComponent<PoolObject>().Pool = this;
         }
+        currentObject.transform.SetParent(null);
+        currentObject.transform.position = position;
         activeObjects.Add(currentObject);
     }
-    public void InstantiateObject(Transform parent)
+    public void InstantiateObject(Transform parent, bool isTurnedOff = false)
     {
-        InstantiateObject(parent.position);
+        InstantiateObject(parent.position, isTurnedOff);
+        currentObject.transform.SetParent(parent);
     }
     public void ReturnToPool(GameObject obj)
     {
