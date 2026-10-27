@@ -69,6 +69,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (other.CompareTag("Cliff"))
         {
+            jumpController.HasGravity = false;
             onFall?.Invoke();
         }
     }

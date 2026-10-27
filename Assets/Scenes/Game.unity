@@ -2491,6 +2491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Continues
   continuesText: {fileID: 1395416752}
+  initialContinues: 3
 --- !u!1 &1485151440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,6 +2866,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 222257376}
+        m_TargetAssemblyTypeName: JumpController, Assembly-CSharp
+        m_MethodName: set_HasGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -3093,7 +3106,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: Lose
           m_BoolArgument: 0
         m_CallState: 2
   deathDelay: 4
@@ -3186,7 +3199,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.24434981, y: -0, z: -0, w: 0.96968716}
   m_LocalPosition: {x: -2.05, y: 6.16, z: -2.45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3250,6 +3263,7 @@ MonoBehaviour:
   target: {fileID: 222257374}
   walkSmoothTime: 0.15
   jumpSmoothTime: 0.4
+  downLimit: 4
 --- !u!1 &1803474967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,18 +3400,6 @@ MonoBehaviour:
   onGameStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1623797653}
-        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
-        m_MethodName: Initialize
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 326645700}
         m_TargetAssemblyTypeName: CoinsController, Assembly-CSharp
         m_MethodName: Initialize
@@ -3422,9 +3424,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onGameRestart:
-    m_PersistentCalls:
-      m_Calls:
+      - m_Target: {fileID: 1484765386}
+        m_TargetAssemblyTypeName: Continues, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1623797653}
         m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: Initialize
@@ -3437,9 +3448,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onGameRestart:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 691004784}
         m_TargetAssemblyTypeName: CheckpointController, Assembly-CSharp
         m_MethodName: MovePlayerToCheckpoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1623797653}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Initialize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3622,7 +3648,7 @@ Transform:
   m_GameObject: {fileID: 2088655478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.09046, y: 0, z: 18.36469}
+  m_LocalPosition: {x: -1.09046, y: -4.58, z: 18.36469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

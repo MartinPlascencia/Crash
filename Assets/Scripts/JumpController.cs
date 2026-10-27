@@ -15,6 +15,18 @@ public class JumpController : MonoBehaviour
     private float gravity = -15f;
     private float verticalVelocity;
     public float VerticalVelocity => verticalVelocity;
+    private bool hasGravity = true;
+    public bool HasGravity
+    {
+        set
+        {
+            hasGravity = value;
+            if (!hasGravity)
+            {
+                verticalVelocity = 0f;
+            }
+        }
+    }
     private void Update()
     {
         if (characterController.isGrounded)
@@ -30,7 +42,10 @@ public class JumpController : MonoBehaviour
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime;
+            if (hasGravity)
+            {
+                verticalVelocity += gravity * Time.deltaTime;
+            }
         }
     }
     public void Jump()
