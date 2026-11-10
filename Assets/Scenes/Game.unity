@@ -503,6 +503,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onLevelGemCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1698707561}
+        m_TargetAssemblyTypeName: GameOverController, Assembly-CSharp
+        m_MethodName: WinGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1623797653}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Win
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onMaskCollected:
     m_PersistentCalls:
       m_Calls:
@@ -3278,7 +3305,43 @@ MonoBehaviour:
         m_CallState: 2
   onWin:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 750200430}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 222257377}
+        m_TargetAssemblyTypeName: MovementController, Assembly-CSharp
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 222257378}
+        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+        m_MethodName: Dance
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1623797654
 Transform:
   m_ObjectHideFlags: 0
@@ -3395,8 +3458,20 @@ MonoBehaviour:
         m_CallState: 2
   onWinGame:
     m_PersistentCalls:
-      m_Calls: []
-  winDelay: 0
+      m_Calls:
+      - m_Target: {fileID: 565676147}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: GoToSceneWithFade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
+  winDelay: 4
   deathDelay: 4
 --- !u!1 &1703546336
 GameObject:
@@ -3486,7 +3561,7 @@ Transform:
   m_GameObject: {fileID: 1703546336}
   serializedVersion: 2
   m_LocalRotation: {x: 0.24434981, y: -0, z: -0, w: 0.96968716}
-  m_LocalPosition: {x: -2.05, y: 6.16, z: -2.45}
+  m_LocalPosition: {x: -2.05, y: 6.05, z: -2.96}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3552,6 +3627,8 @@ MonoBehaviour:
   walkSmoothTime: 0.15
   jumpSmoothTime: 0.4
   downLimit: 4
+  lookAheadDistance: 1.2
+  lookAheadSmoothTime: 0.45
 --- !u!1 &1803474967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,7 +3842,19 @@ MonoBehaviour:
         m_CallState: 2
   onWinGame:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1623797653}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Win
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1817549413
 Transform:
   m_ObjectHideFlags: 0
