@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 222257381}
   - component: {fileID: 222257382}
   - component: {fileID: 222257383}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Crash
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1109,6 +1109,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &400513753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400513755}
+  - component: {fileID: 400513754}
+  m_Layer: 0
+  m_Name: InputDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &400513754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400513753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1beb6894a15c73a4ba94edeaa428d8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputDetection
+  onGamepadConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  onGamepadDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &400513755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400513753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.02326, y: 3.69934, z: 0.49468}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &411567839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2096,7 +2146,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2141,8 +2191,9 @@ MonoBehaviour:
   hitParticles: {fileID: 2524290974347258993, guid: 8d97190484f7240449b2aafe972de274, type: 3}
   bulletPrefab: {fileID: 2903143524434806789, guid: f0694e21068535a47b41df24b007839a, type: 3}
   bulletPivot: {fileID: 1431340637}
-  fireRate: 2
+  fireRate: 3
   shootTime: 1
+  shootOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &1202556524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7172781964774946592, guid: e3cf03c33e588f14f87a4d9bf797c996, type: 3}
@@ -3017,7 +3068,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2.72
+  m_Radius: 4.92
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1461623459
 Rigidbody:
@@ -4929,3 +4980,4 @@ SceneRoots:
   - {fileID: 6967775671578452883}
   - {fileID: 6952192261284641206}
   - {fileID: 1183759163}
+  - {fileID: 400513755}
